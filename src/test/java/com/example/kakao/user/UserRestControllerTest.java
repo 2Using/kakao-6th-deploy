@@ -52,15 +52,9 @@ public class UserRestControllerTest  extends MyRestDoc {
     public void user_join_test() throws Exception {
 
         UserRequest.JoinDTO requestDTO = new UserRequest.JoinDTO();
-<<<<<<< HEAD
         requestDTO.setEmail("metamango@nate.com");
-        requestDTO.setPassword("password123!");
+        requestDTO.setPassword("meta1234!");
         requestDTO.setUsername("test1234");
-=======
-        requestDTO.setEmail("ssarmango@nate.com");
-        requestDTO.setPassword("password123!");
-        requestDTO.setUsername("test");
->>>>>>> origin/main
 
         String requestBody = om.writeValueAsString(requestDTO);
 
@@ -73,11 +67,7 @@ public class UserRestControllerTest  extends MyRestDoc {
         String responseBody = resultActions.andReturn().getResponse().getContentAsString();
         System.out.println("회원가입 테스트:" + responseBody);
 
-<<<<<<< HEAD
         resultActions.andExpect(jsonPath("$.success").value("true"));
-=======
-        resultActions.andExpect(jsonPath("$.success").value("false"));
->>>>>>> origin/main
         resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
     }
 
@@ -86,15 +76,8 @@ public class UserRestControllerTest  extends MyRestDoc {
 
         UserRequest.LoginDTO requestDTO = new UserRequest.LoginDTO();
         requestDTO.setEmail("ssarmango@nate.com");
-<<<<<<< HEAD
         requestDTO.setPassword("meta1234!");
         String requestBody = om.writeValueAsString(requestDTO);
-=======
-        requestDTO.setPassword("password123!");
-
-        String requestBody = om.writeValueAsString(requestDTO);
-
->>>>>>> origin/main
         ResultActions resultActions = mvc.perform(
                 post("/login")
                         .content(requestBody)
@@ -104,11 +87,7 @@ public class UserRestControllerTest  extends MyRestDoc {
         String responseBody = resultActions.andReturn().getResponse().getContentAsString();
         System.out.println("로그인 테스트:" + responseBody);
 
-<<<<<<< HEAD
         resultActions.andExpect(jsonPath("$.success").value("true"));
-=======
-        resultActions.andExpect(jsonPath("$.success").value("false"));
->>>>>>> origin/main
         resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
 
 
